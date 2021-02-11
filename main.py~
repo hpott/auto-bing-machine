@@ -1,0 +1,4 @@
+#Written by hpott
+import os, sys, time, random
+while True:
+    os.system("firefox https://bing.com/?=test")
