@@ -1,8 +1,19 @@
 #Written by hpott
-import string, random, time
+import string, random, time, sys
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-browser = webdriver.Firefox()
+if len(sys.argv) > 1:
+	if sys.argv[1] == "--firefox":
+		browser = webdriver.Firefox()
+	elif sys.argv[1] == "--chrome":
+		webdriver.Chrome()
+else:
+	print("""Usage:
+	Use Google Chrome: main.py --chrome
+	Use Firefox: main.py --firefox""")
+	quit()
+
+#browser = webdriver.Firefox()
 browser.get("https://www.bing.com/search?q=s")
 while True:
     try:
